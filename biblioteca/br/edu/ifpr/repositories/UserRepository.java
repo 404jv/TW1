@@ -30,4 +30,14 @@ public class UserRepository {
 
     users.add(user);
   }
+
+  public String[] getAllUsersName() {
+    ArrayList<String> usersName = new ArrayList<>();
+  
+    for (User user: this.users) {
+      usersName.add(user.getNome());
+    } 
+
+    return usersName.toArray(new String[usersName.size()]);
+  }
 }
