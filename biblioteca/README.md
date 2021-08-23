@@ -1,5 +1,5 @@
 ## ✅ To do list
-- [ ] Cadastrar usuários
+- [x] Cadastrar usuários
 - [ ] Alterar usuários
 - [ ] Remover usuários
 - [ ] Exibir usuários
