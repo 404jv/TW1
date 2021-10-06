@@ -1,0 +1,19 @@
+.photos {
+  display: flex;
+  align-items: center;
+}
+
+.photos .photo {
+  margin: 16px;
+}
+
+.photos .photo .description {
+  font-size: 18px;
+  font-family: Verdana;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.photos .photo img {
+  width: 100%;
+}
