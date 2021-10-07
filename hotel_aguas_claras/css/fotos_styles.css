@@ -1,19 +1,16 @@
-.photos {
-  display: flex;
-  align-items: center;
-}
-
-.photos .photo {
+main .photo {
   margin: 16px;
+  width: 30%;
+  display: inline-block;
 }
 
-.photos .photo .description {
+main .photo .description {
   font-size: 18px;
-  font-family: Verdana;
-  align-items: center;
+  text-align: center;
+  font-family: Verdana, Arial, sans-serif;
   margin-bottom: 8px;
 }
 
-.photos .photo img {
+main .photo img {
   width: 100%;
 }

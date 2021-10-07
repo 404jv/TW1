@@ -1,21 +1,18 @@
-body .about {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  width: 60vw;
+main {
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.about {
-  display: flex;
+main .content {
+  width: 43vw;
+  display: inline-block;
+  position: relative;
+  bottom: 95px;
 }
 
-.about .content p {
-  font-family: Verdana;
-  font-size: 18px;
-  line-height: 150%;
-}
-
-.about img {
+main img {
   margin-left: 16px;
   width: 200px;
+  height: 400px;
 }
