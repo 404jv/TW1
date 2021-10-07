@@ -1,0 +1,15 @@
+main .atractive {
+  width: 30%;
+  display: inline-block;
+  position: relative;
+  left: 20%;
+  margin: 32px 8px;
+}
+
+main .atractive p {
+  text-align: center;
+}
+
+main .atractive img {
+  border-radius: 8px;
+}
