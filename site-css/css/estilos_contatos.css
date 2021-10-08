@@ -1,0 +1,17 @@
+.contato {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.facebook {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.facebook:hover {
+    color: blue;
+}

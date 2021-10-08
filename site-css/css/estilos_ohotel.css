@@ -1,0 +1,11 @@
+.titulo {
+    text-align: center;
+}
+
+.paragrafo {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    margin: 16px;
+}
