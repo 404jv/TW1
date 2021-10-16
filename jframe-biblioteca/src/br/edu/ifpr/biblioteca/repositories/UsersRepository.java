@@ -13,6 +13,26 @@ public class UsersRepository extends AbstractTableModel{
         repository.add(user);
         this.fireTableDataChanged();
     }
+
+    public User getUserByIndex(Integer index) {
+        return this.repository.get(index);
+    }
+
+    public void alterUser(User user, String nome, Integer idade, String email, String senha, String curso) {
+        System.out.println(this.repository.get(0).getNome() + " " + nome);
+        
+        user.setNome(nome);
+        user.setIdade(idade);
+        user.setEmail(email);
+        user.setSenha(senha);
+        user.setCurso(curso);    
+
+        System.out.println(this.repository.get(0).getNome());
+    }
+
+    public void removeUser(User user) {
+        this.repository.remove(user);
+    }
     
     @Override
     public int getRowCount() {

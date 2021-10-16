@@ -11,5 +11,6 @@ main .atractive p {
 }
 
 main .atractive img {
+  width: 100%;
   border-radius: 8px;
 }

@@ -19,7 +19,7 @@ public class TbBook extends javax.swing.JFrame {
      */
     public TbBook() {
         initComponents();
-        jTable1.setModel(model);
+        tbBook.setModel(model);
     }
 
     /**
@@ -51,7 +51,7 @@ public class TbBook extends javax.swing.JFrame {
         btnAlterar = new javax.swing.JButton();
         btnRemover = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbBook = new javax.swing.JTable();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -89,10 +89,20 @@ public class TbBook extends javax.swing.JFrame {
         });
 
         btnAlterar.setText("Alterar");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
 
         btnRemover.setText("Remover");
+        btnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbBook.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -103,7 +113,14 @@ public class TbBook extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+
+        tbBook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clickOnRowActionPerformed(evt);
+            }
+        });
+
+        jScrollPane2.setViewportView(tbBook);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,6 +224,14 @@ public class TbBook extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cleanFields() {
+        txtTitulo.setText("");
+        txtAutor.setText("");
+        txtEditora.setText("");
+        txtAnoPubi.setText("");
+        lista.setSelectedItem("Fantasia");
+    }
+
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         // TODO add your handling code here:
         String titulo = txtTitulo.getText();
@@ -218,7 +243,52 @@ public class TbBook extends javax.swing.JFrame {
         
         Book book = new Book(titulo, autor, editora, paginas, anoPubli, genero);
         this.model.addBook(book);
+        cleanFields();
     }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    
+    private void clickOnRowActionPerformed(java.awt.event.MouseEvent evt) {
+        int selectedBookIndex = tbBook.getSelectedRow();
+
+        if (selectedBookIndex == -1) return;
+
+        Book book = this.model.getBookByIndex(selectedBookIndex);
+
+        txtTitulo.setText(book.getTitulo());
+        txtAutor.setText(book.getAutor());
+        txtEditora.setText(book.getEditora());
+        txtAnoPubi.setText(Integer.toString(book.getAnoPubli()));
+        lista.setSelectedItem(book.getGenero());
+    }
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+        int selectedBookIndex = tbBook.getSelectedRow();
+
+        if (selectedBookIndex == -1) return;
+
+        Book book = this.model.getBookByIndex(selectedBookIndex);
+
+        String titulo = txtTitulo.getText();
+        String autor = txtAutor.getText();
+        String editora = txtEditora.getText();
+        int paginas = Integer.parseInt(txtPaginas.getText());
+        int anoPubli = Integer.parseInt(txtAnoPubi.getText());
+        String genero = (String) lista.getSelectedItem();
+
+        this.model.alterBook(book, titulo, autor, editora, paginas, anoPubli, genero);
+        cleanFields();
+    }
+
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {
+        int selectedBookIndex = tbBook.getSelectedRow();
+
+        if (selectedBookIndex == -1) return;
+
+        Book book = this.model.getBookByIndex(selectedBookIndex);
+
+        this.model.removeBook(book);
+        cleanFields();
+    }
 
     /**
      * @param args the command line arguments
@@ -271,7 +341,7 @@ public class TbBook extends javax.swing.JFrame {
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbBook;
     private javax.swing.JComboBox<String> lista;
     private javax.swing.JTextField txtAnoPubi;
     private javax.swing.JTextField txtAutor;

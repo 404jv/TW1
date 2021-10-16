@@ -81,8 +81,18 @@ public class TbUser extends javax.swing.JFrame {
         });
 
         btnAlterar.setText("Alterar");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
 
         btnRemover.setText("Remover");
+        btnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverActionPerformed(evt);
+            }
+        });
 
         tbUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,6 +105,14 @@ public class TbUser extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+
+        tbUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clickOnRowActionPerformed(evt);
+            }
+        });
+
+
         jScrollPane1.setViewportView(tbUser);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -181,8 +199,16 @@ public class TbUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
+        System.out.println(evt.getActionCommand());
+    }
+
+    private void cleanFields() {
+        txtNome.setText("");
+        txtIdade.setText("");
+        txtEmail.setText("");
+        txtSenha.setText("");
+        txtCurso.setText("");
+    }
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         // TODO add your handling code here:
@@ -195,7 +221,50 @@ public class TbUser extends javax.swing.JFrame {
         User user = new User(nome, idade, email, senha, curso);
         
         this.model.addUser(user);
+        cleanFields();
     }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void clickOnRowActionPerformed(java.awt.event.MouseEvent evt) {
+        int selectedUserIndex = tbUser.getSelectedRow();
+
+        if (selectedUserIndex == -1) return;
+
+        User user = this.model.getUserByIndex(selectedUserIndex);
+
+        txtNome.setText(user.getNome());
+        txtIdade.setText(Integer.toString(user.getIdade()));
+        txtEmail.setText(user.getEmail());
+        txtSenha.setText(user.getSenha());
+        txtCurso.setText(user.getCurso());
+    }
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+        int selectedUserIndex = tbUser.getSelectedRow();
+
+        if (selectedUserIndex == -1) return;
+
+        User user = this.model.getUserByIndex(selectedUserIndex);
+
+        String nome = txtNome.getText();
+        int idade = Integer.parseInt(txtIdade.getText());
+        String email = txtEmail.getText();
+        String senha = txtSenha.getText();
+        String curso = txtCurso.getText();
+
+        this.model.alterUser(user, nome, idade, email, senha, curso);
+        cleanFields();
+    }
+
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {
+        int selectedUserIndex = tbUser.getSelectedRow();
+
+        if (selectedUserIndex == -1) return;
+
+        User user = this.model.getUserByIndex(selectedUserIndex);
+
+        this.model.removeUser(user);
+        cleanFields();
+    }
 
     /**
      * @param args the command line arguments

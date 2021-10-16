@@ -14,6 +14,31 @@ public class BooksRepository extends AbstractTableModel {
         this.fireTableDataChanged();
     }
     
+    public Book getBookByIndex(int index) {
+        return this.repository.get(index);
+    }
+
+    public void alterBook(
+        Book book, 
+        String titulo, 
+        String autor, 
+        String editora, 
+        int paginas, 
+        int anoPubli,
+        String genero
+    ) {
+        book.setTitulo(titulo);
+        book.setAutor(autor);
+        book.setEditora(editora);
+        book.setPaginas(paginas);
+        book.setAnoPubli(anoPubli);
+        book.setGenero(genero);
+    }
+
+    public void removeBook(Book book) {
+        this.repository.remove(book);
+    }
+
     @Override
     public int getRowCount() {
         return repository.size();
