@@ -228,6 +228,7 @@ public class TbBook extends javax.swing.JFrame {
         txtTitulo.setText("");
         txtAutor.setText("");
         txtEditora.setText("");
+        txtPaginas.setText("");
         txtAnoPubi.setText("");
         lista.setSelectedItem("Fantasia");
     }
@@ -257,6 +258,7 @@ public class TbBook extends javax.swing.JFrame {
         txtTitulo.setText(book.getTitulo());
         txtAutor.setText(book.getAutor());
         txtEditora.setText(book.getEditora());
+        txtPaginas.setText(Integer.toString(book.getPaginas()));
         txtAnoPubi.setText(Integer.toString(book.getAnoPubli()));
         lista.setSelectedItem(book.getGenero());
     }
