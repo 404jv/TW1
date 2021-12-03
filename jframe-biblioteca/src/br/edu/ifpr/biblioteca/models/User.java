@@ -1,6 +1,7 @@
 package br.edu.ifpr.biblioteca.models;
 
 public class User {
+    private int id;
     private String nome;
     private int idade;
     private String email;
@@ -16,6 +17,14 @@ public class User {
     }
     
     public User() {}
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+   }
 
     public String getNome() {
         return nome;

@@ -1,6 +1,7 @@
 package br.edu.ifpr.biblioteca.models;
 
 public class Book {
+    private int id;
     private String titulo;
     private String autor;
     private String editora;
@@ -17,6 +18,16 @@ public class Book {
         this.genero = genero;
     }
 
+   public Book() {}
+ 
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+  
     public String getTitulo() {
         return titulo;
     }

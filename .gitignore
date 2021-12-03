@@ -1,3 +1,5 @@
 *.class
 .vscode
 
+/jframe-biblioteca/nbproject/private/
+/jframe-biblioteca/build/
