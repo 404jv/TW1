@@ -3,22 +3,22 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/contato_styles.css">
-    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="../css/contato_styles.css">
+    <link rel="stylesheet" href="../css/global.css">
     <title>Hotel</title>
   </head>
 
   <body>
     <div class="menu">
       <div>
-        <img class="menu_photo" src="/public/menu_foto.png" />
+        <img class="menu_photo" src="../public/menu_foto.png" />
       </div>
 
       <div class="options">
-        <a href="/html/index.html">HOME</a> 
-        <a href="/html/index.html">O HOTEL</a> 
-        <a href="/html/fotos.html">FOTOS</a> 
-        <a href="/html/atrativos.html">ATRATIVOS</a>
+        <a href="../index.html">HOME</a> 
+        <a href="../html/index.html">O HOTEL</a> 
+        <a href="../html/fotos.html">FOTOS</a> 
+        <a href="../html/atrativos.html">ATRATIVOS</a>
         <a class="selected" href="#">CONTATO</a>
       </div>
     </div>
@@ -45,8 +45,28 @@
       </p>
     </main>
 
-    <footer>
-      <p>Todos os direitos reservado.</p>
-    </footer>
+    <div class="contat">
+      <h2 class="title">📧 Envie uma mensagem</h2>
+
+      <form action="https://formsubmit.co/joaovictorramalho7@gmail.com" method="POST">
+        <input placeholder="Me fale seu nome" type="text" name="name" id="name" />
+        <input placeholder="Digite seu e-mail" type="email" name="email" id="email" />
+        <textarea placeholder="Sua mensagem aqui" id="message" name="message" rows="4" cols="50"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+  
+      <footer>
+        <p>Todos os direitos reservado.</p>
+      </footer>
+    </div>
+    
+    <script src="../js/snowstorm.js"></script>
+    <script>
+      let christmasMusic = new Audio('../public/music.mp4');
+
+      christmasMusic.play().then((song) => {
+        song.play();
+      });
+    </script>
   </body>
 </html>

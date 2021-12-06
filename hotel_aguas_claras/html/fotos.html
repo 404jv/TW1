@@ -3,23 +3,23 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/fotos_styles.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/fotos_styles.css">
     <title>Fotos</title>
   </head>
 
   <body>
     <div class="menu">
       <div>
-        <img class="menu_photo" src="/public/menu_foto.png" />
+        <img class="menu_photo" src="../public/menu_foto.png" />
       </div>
 
       <div class="options">
-        <a href="/html/index.html">HOME</a>
-        <a href="/html/hotel.html">O HOTEL</a>
+        <a href="../index.html">HOME</a>
+        <a href="../html/hotel.html">O HOTEL</a>
         <a class="selected" href="#">FOTOS</a>
-        <a href="/html/atrativos.html">ATRATIVOS</a>
-        <a href="/html/contato.html">CONTATO</a>
+        <a href="../html/atrativos.html">ATRATIVOS</a>
+        <a href="../html/contato.html">CONTATO</a>
       </div>
     </div>
     
@@ -33,7 +33,7 @@
         </p>
   
         <img
-          src="/public/quarto1.jpg"
+          src="../public/quarto1.jpg"
         />
       </div>
 
@@ -44,7 +44,7 @@
         </p>
 
         <img
-          src="/public/suite_esperanca.jpg"
+          src="../public/suite_esperanca.jpg"
         />
       </div>
 
@@ -54,7 +54,7 @@
         </p>
 
         <img
-          src="/public/quarto_simples.jpg"
+          src="../public/quarto_simples.jpg"
         />
       </div>
     </main>
@@ -64,5 +64,14 @@
       <p>Todos os direitos reservado.</p>
       <p>Fone: (44)3522-1805 | 9.9919-9460 | (44)99938-2809 < Whatts</p>
     </footer>
+
+    <script src="../js/snowstorm.js"></script>
+    <script>
+      let christmasMusic = new Audio('../public/music.mp4');
+
+      christmasMusic.play().then((song) => {
+        song.play();
+      });
+    </script>
   </body>
 </html>

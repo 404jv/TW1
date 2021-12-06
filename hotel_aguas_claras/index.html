@@ -3,27 +3,31 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/index_styles.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/index_styles.css">
+    <script src="https://sites.google.com/site/novoefeitoneve/home/novoefeitoneve/snowstorm.js"></script>
     <title>Home</title>
   </head>
 
   <body>
     <div class="menu">
       <div>
-        <img class="menu_photo" src="/public/menu_foto.png" />
+        <img class="menu_photo" src="../public/menu_foto.png" />
       </div>
 
       <div class="options">
         <a class="selected" href="#">HOME</a>
-        <a href="/html/hotel.html">O HOTEL</a>
-        <a href="/html/fotos.html">FOTOS</a>
-        <a href="/html/atrativos.html">ATRATIVOS</a>
-        <a href="/html/contato.html">CONTATO</a>
+        <a href="../html/hotel.html">O HOTEL</a>
+        <a href="../html/fotos.html">FOTOS</a>
+        <a href="../html/atrativos.html">ATRATIVOS</a>
+        <a href="../html/contato.html">CONTATO</a>
       </div>
     </div>
 
     <main>
+      <div class="timer">
+        <p>Promoção de natal acaba em: <span id="counter"></span></p>
+      </div>
       <div class="content">
         <h2 class="title">💙 Sobre</h2>
         
@@ -41,7 +45,7 @@
       </div>
 
       <img
-        src="/public/cachoeira.jpg" 
+        src="../public/cachoeira.jpg" 
       />
     </main>
 
@@ -49,5 +53,15 @@
       <p>Todos os direitos reservado.</p>
       <p>Fone: (44)3522-1805 | 9.9919-9460 | (44)99938-2809 < Whatts</p>
     </footer>
+
+    <script src="./js/christmasEvent.js"></script>
+    <script src="./js/snowstorm.js"></script>
+    <script>
+      let christmasMusic = new Audio('./public/music.mp4');
+
+      christmasMusic.addEventListener("canplaythrough", event => {
+        christmasMusic.play();
+      });
+    </script>
   </body>
 </html>
