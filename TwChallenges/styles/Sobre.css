@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+.h1-about{
+    color: #1B2E40;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+.About-Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: 50px;
+}
+
+.title-about{
+    color: #1B2E40;
+}
+
+.About-View{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.LogoView{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1B2E40;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.Description-View{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.h2-description{
+    color: #000;
+    font-size: 40px;
+    width: 800px;
+}
+
+.p-description{
+    margin-top: 12px;
+    font-size: 30px;
+    color: #697581;
+    width: 800px;
+}
+
+.Contact-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.h3-contact{
+    color: #1B2E40;
+    font-size: 30px;
+}
+
+.Form{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.Inputs{
+    display: flex;
+    align-items: center;
+}
+
+.h2-Inputs{
+    color: #1B2E40;
+}
+
+.InputUser{
+    padding: 6px;
+    border: none;
+    background-color: #697581;
+    color: #FFF;
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.InputUser:focus{
+    border: none;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.InputUser:hover{
+    border: none;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.InputUser::placeholder{
+    color: #FFF;
+    opacity: 1;
+}
+
+.Sexo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 10px;
+}
+
+
+.label-s{
+    color: #000;
+    font-size: 16px;
+}
+
+.btn-form{
+    padding: 15px;
+    border: none;
+    color: #FFF;
+    background-color: #697581;
+    width: 120px;
+    font-size: 20px;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+
+.btn-form:hover{
+    background-color: #1B2E40;
+}

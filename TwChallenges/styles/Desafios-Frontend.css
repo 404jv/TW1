@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.Container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.Header-Challenge{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.h1-Challenge{
+    color: #1B2E40;
+}
+
+.Options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Option-Text{
+    margin-left: 8px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 550;
+    text-decoration: none;
+}
+
+.Option-Text:hover{
+    color: #074C6A;
+}
+
+.Card-Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Cards{
+    display: flex;
+    flex-direction: row;
+    padding: 27px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Card{
+    display: flex;
+    flex-direction: column;
+
+    width: 240px;
+    height: 330px;
+
+    margin-bottom: 16px;
+
+    background-color: #1B2E40;
+    border-radius: 8px;
+    margin-left: 50px;
+}
+
+.Top-Card{
+    height: 50%;
+    background-color: #CCC;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.FrontImage{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.category-FrontEnd{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #6B3DA6;
+    color: #FFF;
+
+    position: relative;
+    top: -150px;
+    left: 10px;
+}
+
+.category-intermediate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #E7B871;
+    color: #FFF;
+
+    position: relative;
+    top: -155px;
+    left: 10px;
+}
+
+.category-HTML {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #726F6F;
+    color: #FFF;
+    
+    position: relative;
+    top: -218px;
+    left: 165px;
+}
+
+.category-CSS {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #726F6F;
+    color: #FFF;
+
+    position: relative;
+    top: -213px;
+    left: 175px;
+}
+
+.category-JS {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #726F6F;
+    color: #FFF;
+
+    position: relative;
+    top: -207px;
+    left: 127px;
+}
+
+.Bottom-Card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.Title-Card{
+    color: #FFF;
+    font-size: 26px;
+}
+
+.P-Card{
+    margin: 5px;
+    text-align: center;
+    color: #D3D3D3;
+}
+
+.Btn-Card{
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #FFF;
+    border: none;
+    color: #363636;
+    border-radius: 6px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.Btn-Card:hover {
+    background-color: #D3D3D3;
+    color: #074C6A;
+}

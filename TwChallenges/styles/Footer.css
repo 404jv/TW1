@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.Footer{
+    display: flex;
+    flex-direction: row;
+    background-color: #0C1C2B;
+    padding: 30px;
+
+    justify-content: space-between;
+}
+
+.FooterContainer{
+    display: flex;
+    flex-direction: row;
+    margin-right: 60px;
+}
+
+.FooterWraper{
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    margin-right: 60px;
+}
+
+.A-Footer{
+    font-size: 22px;
+    margin-top: 6px;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.A-Footer:hover{
+    color: #074C6A;
+}
+
+.H3-Footer{
+    color: #FFF;
+    margin-bottom: 10px;
+}
+
+.img-Footer{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}

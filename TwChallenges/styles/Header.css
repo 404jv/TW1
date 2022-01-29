@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.Container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.Header{
+    display: flex;
+    flex-direction: row;
+    padding: 32px;
+    background-color: #0C1C2B;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 2px solid #FFF;
+}
+
+.Logo{
+    color: #FFFFFF;
+}
+
+.PagesHeader{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+.Text-Header{
+    font-size: 22px;
+    margin-left: 30px;
+    color: #FFFFFF;
+}
+
+.Text-Header:hover{
+    text-decoration: underline;
+    color: #074C6A;
+}

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.category-Mobile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #3DA69F;
+    color: #FFF;
+
+    position: relative;
+    top: -160px;
+    left: 10px;
+}
+
+.category-ReactNative{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #743763;
+    color: #FFF;
+    
+    position: relative;
+    top: -218px;
+    left: 125px;
+}
