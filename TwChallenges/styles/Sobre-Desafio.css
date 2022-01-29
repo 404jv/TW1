@@ -51,6 +51,61 @@
     align-items: center;
 }
 
+.category-BackEnd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #964848;
+    color: #FFF;
+    border-radius: 20px;
+
+    margin-right: 10px;
+
+    width: 100px;
+}
+
+.category-Free {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #726F6F;
+    color: #FFF;
+    border-radius: 20px;
+
+    margin-right: 10px;
+
+    width: 100px;
+}
+
+.category-Beginner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #78D19C;
+    color: #FFF;
+    border-radius: 20px;
+
+    margin-right: 10px;
+
+    width: 100px;
+}
+
+.category-Mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #78D19C;
+    color: #FFF;
+    border-radius: 20px;
+
+    margin-right: 10px;
+
+    width: 100px;
+}
 
 .category-intermediate{
     display: flex;

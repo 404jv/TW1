@@ -58,4 +58,10 @@ function setInfoContainer() {
   linkToGithub.href = challenge.github_link;
 
   infoContainer.appendChild(linkToGithub);
+
+  const titleH2 = document.querySelector('.h2-title-challenge');
+  titleH2.innerText = `Desafio ${challenge.name}`;
+
+  const description2 = document.querySelector('.p-description-challenge');
+  description2.innerText = challenge.description;
 }

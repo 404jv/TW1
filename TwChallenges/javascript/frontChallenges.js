@@ -23,7 +23,7 @@ function setTopCard(challenge) {
 
   const challengeImg = document.createElement('img');
   challengeImg.className = 'FrontImage';
-  challengeImg.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiBCVJvn5NWjrBS0zRK-6q3yV0uoeOuDoCchJ7648gwys_dhEc4QIuahHjWBD79mpfIkM&usqp=CAU';
+  challengeImg.src = challenge.imagesLinks[0];
 
   topCard.appendChild(challengeImg);
 
