@@ -28,13 +28,13 @@ setInfoContainer();
 function setInfoContainer() {
   const title = document.createElement('h2');
   title.className = 'h2-Info';
-  title.innerText = challenge.name;
+  title.innerText =  challenge.name.length < 15 ? challenge.name : `${challenge.name.substring(0, 15)}...`;
 
   infoContainer.appendChild(title);
 
   const description = document.createElement('p');
   description.className = 'p-Info';
-  description.innerText = challenge.description;
+  description.innerText = challenge.description.substring(0, 110);
 
   infoContainer.appendChild(description);
 

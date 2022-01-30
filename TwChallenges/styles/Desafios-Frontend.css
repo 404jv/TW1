@@ -161,6 +161,37 @@
     left: 127px;
 }
 
+.category-Beginner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #78D19C;
+    color: #FFF;
+
+    position: relative;
+    top: -155px;
+    left: 10px;
+}
+
+
+.category-Free {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #726F6F;
+    color: #FFF;
+
+    position: relative;
+    top: -218px;
+    left: 165px;
+}
+
 .Bottom-Card{
     display: flex;
     align-items: center;

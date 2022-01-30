@@ -44,7 +44,7 @@ function setBottomCard(challenge) {
 
   const title = document.createElement('h1');
   title.className = 'Title-Card';
-  title.innerText = challenge.name;
+  title.innerText =  challenge.name.length < 15 ? challenge.name : `${challenge.name.substring(0, 15)}...`;
 
   bottomCard.appendChild(title);
 

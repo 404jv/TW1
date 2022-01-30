@@ -13,8 +13,24 @@ export const challenges = [
       'intermediate',
       'Free',
     ],
-    github_link: 'https://github.com/404jv',
+    github_link: 'https://github.com/Lorenalgm/pokedex',
     platform: 'mobile'
+  },
+  {
+    id: 9,
+    name: 'Conceitos do Node.js',
+    description: 'Essa será uma aplicação para gerenciar  tarefas (em inglês todos). Será permitida a criação de um usuário com name e username',
+    imagesLinks: [
+      'https://blog.cod3r.com.br/wp-content/uploads/2020/11/image-59.png',
+      'https://www.opus-software.com.br/wp-content/uploads/2018/09/nodejs.jpg'
+    ],
+    tags: [
+      'BackEnd',
+      'Beginner',
+      'Free',
+    ],
+    github_link: 'https://github.com/rocketseat-education/ignite-template-conceitos-do-nodejs',
+    platform: 'backend'
   },
   {
     id: 2,
@@ -31,7 +47,7 @@ export const challenges = [
       'HTML',
       'CSS',
     ],
-    github_link: 'https://github.com/404jv',
+    github_link: 'https://github.com/devchallenge-io/shop-website',
     platform: 'frontend'
   },
   {
@@ -49,7 +65,7 @@ export const challenges = [
       'HTML',
       'CSS',
     ],
-    github_link: 'https://github.com/404jv',
+    github_link: 'https://github.com/devchallenge-io/pomodoro',
     platform: 'frontend'
   },
   {
@@ -67,7 +83,7 @@ export const challenges = [
       'HTML',
       'CSS',
     ],
-    github_link: 'https://github.com/404jv',
+    github_link: 'https://github.com/mariaalm20/correio-elegante-devchallenge',
     platform: 'mobile'
   },
   {
@@ -84,8 +100,24 @@ export const challenges = [
       'intermediate',
       'Free',
     ],
-    github_link: 'https://github.com/404jv',
+    github_link: 'https://github.com/stevescruz/Challenge-Task-List',
     platform: 'mobile'
+  },
+  {
+    id: 10,
+    name: 'Gerando Relatórios',
+    description: 'Dez pessoas fizeram freelas para uma empresa X durante cinco anos e o histórico com todos os dados de cada uma dessas pessoas (nome, horas trabalhadas, dia, mês e ano) foram passadas para um arquivo CSV na seguinte ordem: nome, horas de trabalho no dia (que vai variar de 1 a 8 hrs), dia (que vai variar de 1 a 30 mesmo para o mês de fevereiro e sem considerar anos bissextos) referente às horas de trabalho, mês e ano (que vai de 2016 a 2020). Resumindo: nome, quantidade de horas, dia, mês e ano. O relatório gerado a partir do arquivo',
+    imagesLinks: [
+      'https://www.lambda3.com.br/wp-content/uploads//2016/06/elixir-logo.png',
+      'https://i.stack.imgur.com/fXcyp.png'
+    ],
+    tags: [
+      'BackEnd',
+      'Beginner',
+      'Free',
+    ],
+    github_link: 'https://github.com/rocketseat-education/ignite-template-conceitos-do-nodejs',
+    platform: 'backend'
   },
   {
     id: 6,
@@ -101,7 +133,7 @@ export const challenges = [
       'Beginner',
       'Free',
     ],
-    github_link: 'https://github.com/404jv',
+    github_link: 'https://github.com/devchallenge-io/music-library-page',
     platform: 'backend'
   },
   {
@@ -114,12 +146,12 @@ export const challenges = [
       '../Assets/Profile/image-Change3.png',
     ],
     tags: [
-      'BackEnd',
+      'FrontEnd',
       'Beginner',
       'Free',
     ],
-    github_link: 'https://github.com/404jv',
-    platform: 'backend'
+    github_link: 'https://github.com/devchallenge-io/profile-component',
+    platform: 'frontend'
   },
   {
     id: 8,
@@ -135,8 +167,7 @@ export const challenges = [
       'intermediate',
       'Free',
     ],
-    github_link: 'https://github.com/404jv',
-    platform: 'backend'
+    github_link: 'https://github.com/Lorenalgm/marvel-heroes',
+    platform: 'mobile'
   },
-  
 ];
