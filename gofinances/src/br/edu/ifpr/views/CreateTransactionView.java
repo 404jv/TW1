@@ -5,6 +5,19 @@
  */
 package br.edu.ifpr.views;
 
+import br.edu.ifpr.DAOs.CategoryDAO;
+import br.edu.ifpr.entities.Category;
+import br.edu.ifpr.entities.Transaction;
+import br.edu.ifpr.models.TransactionsModel;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alunoadm
@@ -28,16 +41,18 @@ public class CreateTransactionView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Type = new javax.swing.ButtonGroup();
+        buttonTypeGroup = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nameInputText = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
+        priceInputText = new javax.swing.JTextField();
+        buttonIncome = new javax.swing.JRadioButton();
+        buttonOutcome = new javax.swing.JRadioButton();
+        CategoriesBox = new javax.swing.JComboBox();
+        submitButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        dateInputText = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -46,17 +61,36 @@ public class CreateTransactionView extends javax.swing.JFrame {
 
         jLabel2.setText("Preço");
 
-        Type.add(jRadioButton1);
-        jRadioButton1.setForeground(new java.awt.Color(0, 255, 51));
-        jRadioButton1.setText("Entrada");
+        buttonTypeGroup.add(buttonIncome);
+        buttonIncome.setForeground(new java.awt.Color(0, 255, 51));
+        buttonIncome.setText("Entrada");
+        buttonIncome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonIncomeActionPerformed(evt);
+            }
+        });
 
-        Type.add(jRadioButton2);
-        jRadioButton2.setForeground(new java.awt.Color(255, 0, 0));
-        jRadioButton2.setText("Saida");
+        buttonTypeGroup.add(buttonOutcome);
+        buttonOutcome.setForeground(new java.awt.Color(255, 0, 0));
+        buttonOutcome.setText("Saida");
+        buttonOutcome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonOutcomeActionPerformed(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Categoria", "Item 2", "Item 3", "Item 4" }));
+        CategoriesBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CategoriesBoxActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Enviar");
+        submitButton.setText("Enviar");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButtonActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -65,6 +99,8 @@ public class CreateTransactionView extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Data");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,25 +108,32 @@ public class CreateTransactionView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(submitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(dateInputText, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(priceInputText, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)))
+                                .addComponent(nameInputText, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonIncome)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonOutcome))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(CategoriesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(jButton2)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -99,22 +142,26 @@ public class CreateTransactionView extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nameInputText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(priceInputText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(jLabel3)
+                    .addComponent(dateInputText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonIncome)
+                    .addComponent(buttonOutcome))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CategoriesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(submitButton)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addContainerGap())
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,9 +169,34 @@ public class CreateTransactionView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initData() {
-        
+        try {
+            ArrayList<Category> categories = this.getCategories();
+         
+            for (Category category: categories) {
+                this.CategoriesBox.addItem(category.getName());
+            }
+        } catch (Exception e) {
+            Logger.getLogger(CreateTransactionView.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
+    private ArrayList<Category> getCategories() {
+        CategoryDAO categoriesDAO = new CategoryDAO();
+
+        try {
+            ArrayList<Category> categories = categoriesDAO.list();
+         
+            if (categories.isEmpty() == false) return categories;
+
+            categoriesDAO.seed();
+            categories = categoriesDAO.list();
+
+            return categories;
+        } catch (SQLException e) {
+            Logger.getLogger(CreateTransactionView.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return null;
+    }
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         Home view = new Home();
@@ -132,6 +204,80 @@ public class CreateTransactionView extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void CategoriesBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoriesBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CategoriesBoxActionPerformed
+
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        String name = nameInputText.getText();
+        float price = Float.parseFloat(priceInputText.getText());
+        String selectedType = this.getSelectedButton();
+        String selectedCategory = CategoriesBox.getSelectedItem().toString();
+        String dateString = dateInputText.getText();
+
+        Date date = this.stringToDate(dateString);
+
+        if (date == null) return;
+
+        Transaction transaction = new Transaction(
+            name, 
+            price, 
+            date, 
+            selectedType, 
+            selectedCategory,
+            Login.currentUser.getId()
+        );
+
+        TransactionsModel transactionsModel = new TransactionsModel();
+ 
+        transactionsModel.create(transaction);
+
+        JOptionPane.showMessageDialog(
+            this,
+            "Transação criada com sucesso!",
+            "Sucesso",
+            JOptionPane.INFORMATION_MESSAGE
+        );
+
+        this.cleanFields();
+    }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void cleanFields() {
+        nameInputText.setText("");
+        priceInputText.setText("");
+        dateInputText.setText("");
+    }
+
+    private Date stringToDate(String dateString) {
+        try {
+            Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dateString);
+
+            return date;
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Data inválida! Digite no formato dd/mm/AAAA",
+                "Error!",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+        return null;
+    }
+
+    private void buttonOutcomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOutcomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonOutcomeActionPerformed
+
+    private void buttonIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIncomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonIncomeActionPerformed
+
+    private String getSelectedButton() {
+        if (buttonIncome.isSelected()) return buttonIncome.getText();
+
+        return buttonOutcome.getText();
+    }
 
     /**
      * @param args the command line arguments
@@ -170,15 +316,17 @@ public class CreateTransactionView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup Type;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox CategoriesBox;
+    private javax.swing.JRadioButton buttonIncome;
+    private javax.swing.JRadioButton buttonOutcome;
+    private javax.swing.ButtonGroup buttonTypeGroup;
+    private javax.swing.JTextField dateInputText;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField nameInputText;
+    private javax.swing.JTextField priceInputText;
+    private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }

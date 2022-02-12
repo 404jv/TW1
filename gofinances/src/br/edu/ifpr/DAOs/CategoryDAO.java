@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class CategoryDAO {
 
-    public Object[] list() throws SQLException {
+    public ArrayList<Category> list() throws SQLException {
         String sql = "SELECT ID, NAME FROM CATEGORIES";
         
         Connection connection = new ConnectionFactory().getConnection();
@@ -36,7 +36,7 @@ public class CategoryDAO {
         query.close();
         connection.close();
 
-        return categories.toArray();
+        return categories;
     }
 
     public void seed() throws SQLException {
@@ -55,5 +55,27 @@ public class CategoryDAO {
         }
         
         connection.close();
+    }
+
+    public Category findByName(String name) throws SQLException {
+        String sql = "SELECT * FROM CATEGORIES WHERE NAME = ?";
+        
+        Connection connection = new ConnectionFactory().getConnection();
+        
+        PreparedStatement stmt = connection.prepareStatement(sql);
+        
+        stmt.setString(1, name);
+        
+        ResultSet result = stmt.executeQuery();
+        
+        Category category = null;
+
+        if (result.next()) {
+            category = new Category();
+            category.setId(result.getInt("ID"));
+            category.setName(result.getString("NAME"));
+        }
+        
+        return category;
     }
 }

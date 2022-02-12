@@ -38,18 +38,19 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="470" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -105,7 +106,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="32" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jTextField2" min="-2" pref="64" max="-2" attributes="0"/>
+                      <Component id="incomeTxt" min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -118,7 +119,7 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+                  <Component id="incomeTxt" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -128,12 +129,12 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="ff" red="33" type="rgb"/>
+              <Color blue="ff" green="88" red="33" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Entradas"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="incomeTxt">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -155,7 +156,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Listagem"/>
+        <Property name="text" type="java.lang.String" value="Suas transa&#xe7;&#xf5;es"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -165,7 +166,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable1">
+        <Component class="javax.swing.JTable" name="transactionsTable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="5" rowCount="4">
@@ -226,7 +227,7 @@
                   <EmptySpace pref="32" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jTextField3" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="totalTxt" min="-2" pref="64" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -243,7 +244,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="12" max="32767" attributes="0"/>
-                  <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
+                  <Component id="totalTxt" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -253,12 +254,12 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="66" red="ff" type="rgb"/>
+              <Color blue="0" green="d4" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Total"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="totalTxt">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -279,7 +280,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="32" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTextField4" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                      <Component id="outcomeTxt" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
@@ -295,7 +296,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="12" max="32767" attributes="0"/>
-                  <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
+                  <Component id="outcomeTxt" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -305,12 +306,12 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="ff" type="rgb"/>
+              <Color blue="ff" green="0" red="9d" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Saidas"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="outcomeTxt">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
             <Property name="focusable" type="boolean" value="false"/>

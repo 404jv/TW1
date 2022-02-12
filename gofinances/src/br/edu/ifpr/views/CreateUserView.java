@@ -159,8 +159,6 @@ public class CreateUserView extends javax.swing.JFrame {
         String name = txtName.getText();
         String password = new String(txtPassword.getPassword());
 
-        System.out.println("oi");
-
         if (name.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(
                 this,
@@ -168,6 +166,7 @@ public class CreateUserView extends javax.swing.JFrame {
                 "Erro",
                 JOptionPane.INFORMATION_MESSAGE
             );
+            return;
         }
 
         User user = new User(name, password);
