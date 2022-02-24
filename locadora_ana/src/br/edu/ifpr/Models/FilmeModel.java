@@ -4,9 +4,14 @@
  */
 package br.edu.ifpr.Models;
 
-import br.edu.ifpr.Entities.Filme;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
+
+import br.edu.ifpr.Entities.Filme;
+import br.edu.ifpr.DAOs.FilmesDAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,12 +21,24 @@ public class FilmeModel extends AbstractTableModel {
     ArrayList<Filme> filmes = new ArrayList();
     String[] colunas = { "ID", "Titulo", "Aluguel" };
 
-    // public ArrayList<Movie> getMovies() {
+    public FilmeModel() {
+        FilmesDAO filmesDAO = new FilmesDAO();
 
-    // }
+        try {
+            this.filmes = filmesDAO.listar();
+        } catch (SQLException e) {
+            Logger.getLogger(FilmeModel.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
     
     public void create(Filme filme) {
+       FilmesDAO filmesDAO = new FilmesDAO();
 
+        try {
+            filmesDAO.criar(filme);
+        } catch (SQLException e) {
+            Logger.getLogger(FilmeModel.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
     @Override

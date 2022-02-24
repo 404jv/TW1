@@ -17,6 +17,11 @@ public class Filme {
         this.aluguel = aluguel;
     }
 
+    public Filme(String titulo, float aluguel) {
+        this.titulo = titulo;
+        this.aluguel = aluguel;
+    }
+
     public int getId() {
         return id;
     }

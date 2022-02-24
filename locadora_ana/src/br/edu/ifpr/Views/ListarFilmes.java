@@ -4,17 +4,23 @@
  */
 package br.edu.ifpr.Views;
 
+import br.edu.ifpr.Entities.Filme;
+import br.edu.ifpr.Models.FilmeModel;
+
 /**
  *
- * @author joao
+ * @author ana
  */
 public class ListarFilmes extends javax.swing.JFrame {
+    FilmeModel model;
 
     /**
      * Creates new form ListFilmes
      */
     public ListarFilmes() {
         initComponents();
+        this.model = new FilmeModel();
+        filmesTable.setModel(this.model);
     }
 
     /**
@@ -27,44 +33,30 @@ public class ListarFilmes extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        txtName = new javax.swing.JTextField();
+        tituloTxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        txtName1 = new javax.swing.JTextField();
+        aluguelTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        filmesTable = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtName.addActionListener(new java.awt.event.ActionListener() {
+        tituloTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNameActionPerformed(evt);
+                tituloTxtActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Título");
 
-        txtName1.addActionListener(new java.awt.event.ActionListener() {
+        aluguelTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtName1ActionPerformed(evt);
+                aluguelTxtActionPerformed(evt);
             }
         });
 
@@ -73,6 +65,11 @@ public class ListarFilmes extends javax.swing.JFrame {
         jLabel3.setText("Todos os filmes");
 
         jButton1.setText("Criar Filme");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -81,7 +78,7 @@ public class ListarFilmes extends javax.swing.JFrame {
 
         jLabel4.setText("Criar novo filme");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        filmesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -92,7 +89,7 @@ public class ListarFilmes extends javax.swing.JFrame {
                 "ID", "Título", "Aluguel"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(filmesTable);
 
         jLabel5.setText("<- Voltar");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -114,9 +111,9 @@ public class ListarFilmes extends javax.swing.JFrame {
                                 .addGap(128, 128, 128)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
-                                    .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(aluguelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel1)
-                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(tituloTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(168, 168, 168)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -140,11 +137,11 @@ public class ListarFilmes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tituloTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(aluguelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
@@ -158,13 +155,13 @@ public class ListarFilmes extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+    private void tituloTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNameActionPerformed
+    }//GEN-LAST:event_tituloTxtActionPerformed
 
-    private void txtName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName1ActionPerformed
+    private void aluguelTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aluguelTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtName1ActionPerformed
+    }//GEN-LAST:event_aluguelTxtActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -176,6 +173,27 @@ public class ListarFilmes extends javax.swing.JFrame {
 
         this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+       String titulo = tituloTxt.getText();
+       float aluguel = Float.parseFloat(aluguelTxt.getText());
+
+        Filme filme = new Filme(titulo, aluguel);
+
+        FilmeModel filmeModel = new FilmeModel();
+ 
+        filmeModel.create(filme);
+
+        this.limparCampos();
+
+        // Pq essa tabela não atualiza quando cria?
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void limparCampos() {
+        tituloTxt.setText("");
+        aluguelTxt.setText("");
+    }
+
 
     /**
      * @param args the command line arguments
@@ -214,6 +232,8 @@ public class ListarFilmes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField aluguelTxt;
+    private javax.swing.JTable filmesTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -222,9 +242,6 @@ public class ListarFilmes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtName1;
+    private javax.swing.JTextField tituloTxt;
     // End of variables declaration//GEN-END:variables
 }
