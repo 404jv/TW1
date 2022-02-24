@@ -36,6 +36,8 @@ public class FilmeModel extends AbstractTableModel {
 
         try {
             filmesDAO.criar(filme);
+
+            this.filmes = filmesDAO.listar();
         } catch (SQLException e) {
             Logger.getLogger(FilmeModel.class.getName()).log(Level.SEVERE, null, e);
         }

@@ -19,7 +19,7 @@ public class ListarFilmes extends javax.swing.JFrame {
      */
     public ListarFilmes() {
         initComponents();
-        this.model = new FilmeModel();
+        model = new FilmeModel();
         filmesTable.setModel(this.model);
     }
 
@@ -180,13 +180,9 @@ public class ListarFilmes extends javax.swing.JFrame {
 
         Filme filme = new Filme(titulo, aluguel);
 
-        FilmeModel filmeModel = new FilmeModel();
- 
-        filmeModel.create(filme);
+        model.create(filme);
 
         this.limparCampos();
-
-        // Pq essa tabela não atualiza quando cria?
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void limparCampos() {
