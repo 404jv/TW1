@@ -4,17 +4,22 @@
  */
 package br.edu.ifpr.Views;
 
+import br.edu.ifpr.Models.AluguelModel;
+
 /**
  *
- * @author joao
+ * @author ana
  */
 public class ListarContas extends javax.swing.JFrame {
+    AluguelModel model; 
 
     /**
      * Creates new form ListarContas
      */
     public ListarContas() {
         initComponents();
+        model = new AluguelModel();
+        alugueisTable.setModel(model);
     }
 
     /**
@@ -28,7 +33,7 @@ public class ListarContas extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        alugueisTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -39,7 +44,7 @@ public class ListarContas extends javax.swing.JFrame {
 
         jLabel1.setText("Seja bem vindo a locadora!");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        alugueisTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -50,7 +55,7 @@ public class ListarContas extends javax.swing.JFrame {
                 "ID", "Cliente", "Filme", "Status", "Data de entraga", "Total"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(alugueisTable);
 
         jLabel2.setText("Alugueis");
 
@@ -90,7 +95,7 @@ public class ListarContas extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Devolução");
+        jButton4.setText("Devolver");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton4MouseClicked(evt);
@@ -230,6 +235,7 @@ public class ListarContas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable alugueisTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -237,6 +243,5 @@ public class ListarContas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

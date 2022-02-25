@@ -5,7 +5,8 @@
  */
 package br.edu.ifpr.Views;
 
-import javax.swing.JOptionPane;
+import br.edu.ifpr.Entities.Cliente;
+import br.edu.ifpr.Models.ClienteModel;
 
 /**
  *
@@ -28,13 +29,13 @@ public class CriarUsuario extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
+        cpfTxt = new javax.swing.JTextField();
         createButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtName1 = new javax.swing.JTextField();
-        txtName2 = new javax.swing.JTextField();
-        txtName3 = new javax.swing.JTextField();
+        nomeTxt = new javax.swing.JTextField();
+        enderecoTxt = new javax.swing.JTextField();
+        celularTxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,9 +45,9 @@ public class CriarUsuario extends javax.swing.JFrame {
 
         jLabel3.setText("Nome");
 
-        txtName.addActionListener(new java.awt.event.ActionListener() {
+        cpfTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNameActionPerformed(evt);
+                cpfTxtActionPerformed(evt);
             }
         });
 
@@ -66,21 +67,21 @@ public class CriarUsuario extends javax.swing.JFrame {
 
         jLabel5.setText("CPF");
 
-        txtName1.addActionListener(new java.awt.event.ActionListener() {
+        nomeTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtName1ActionPerformed(evt);
+                nomeTxtActionPerformed(evt);
             }
         });
 
-        txtName2.addActionListener(new java.awt.event.ActionListener() {
+        enderecoTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtName2ActionPerformed(evt);
+                enderecoTxtActionPerformed(evt);
             }
         });
 
-        txtName3.addActionListener(new java.awt.event.ActionListener() {
+        celularTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtName3ActionPerformed(evt);
+                celularTxtActionPerformed(evt);
             }
         });
 
@@ -105,15 +106,15 @@ public class CriarUsuario extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
-                            .addComponent(txtName)
+                            .addComponent(cpfTxt)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addComponent(createButton))
-                            .addComponent(txtName1)
-                            .addComponent(txtName2)
-                            .addComponent(txtName3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(nomeTxt)
+                            .addComponent(enderecoTxt)
+                            .addComponent(celularTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -124,19 +125,19 @@ public class CriarUsuario extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(enderecoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(celularTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cpfTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(createButton)
                 .addContainerGap(62, Short.MAX_VALUE))
@@ -146,29 +147,47 @@ public class CriarUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+    private void cpfTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNameActionPerformed
+    }//GEN-LAST:event_cpfTxtActionPerformed
 
     private void createButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createButtonMouseClicked
+        String nome = nomeTxt.getText();
+        String endereco = enderecoTxt.getText();
+        String celular = celularTxt.getText();
+        String cpf = cpfTxt.getText();
+
+        Cliente cliente = new Cliente(nome, endereco, celular, cpf);
+
+        ClienteModel clienteModel = new ClienteModel();
+
+        clienteModel.create(cliente);
+
+        this.limparCampos();
     }//GEN-LAST:event_createButtonMouseClicked
 
+    private void limparCampos() {
+        nomeTxt.setText("");
+        enderecoTxt.setText("");
+        celularTxt.setText("");
+        cpfTxt.setText("");
+    }
+
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-        String name = txtName.getText();
 
     }//GEN-LAST:event_createButtonActionPerformed
 
-    private void txtName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName1ActionPerformed
+    private void nomeTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtName1ActionPerformed
+    }//GEN-LAST:event_nomeTxtActionPerformed
 
-    private void txtName2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName2ActionPerformed
+    private void enderecoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enderecoTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtName2ActionPerformed
+    }//GEN-LAST:event_enderecoTxtActionPerformed
 
-    private void txtName3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName3ActionPerformed
+    private void celularTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtName3ActionPerformed
+    }//GEN-LAST:event_celularTxtActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         ListarContas listarContas = new ListarContas();
@@ -220,15 +239,15 @@ public class CriarUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField celularTxt;
+    private javax.swing.JTextField cpfTxt;
     private javax.swing.JButton createButton;
+    private javax.swing.JTextField enderecoTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtName1;
-    private javax.swing.JTextField txtName2;
-    private javax.swing.JTextField txtName3;
+    private javax.swing.JTextField nomeTxt;
     // End of variables declaration//GEN-END:variables
 }

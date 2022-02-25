@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author joao
+ * @author ana
  */
 public class FilmesDAO {
     public void criar(Filme filme) throws SQLException {
@@ -57,5 +57,30 @@ public class FilmesDAO {
         conexao.close();
         
         return filmes;
+    }
+
+    public Filme procurarPorTitulo(String titulo) throws SQLException {
+        String sql = "SELECT * FROM FILMES WHERE TITULO = ?";
+
+        Connection conexao = new ConnectionFactory().getConnection();
+
+        PreparedStatement smt = conexao.prepareStatement(sql);
+        
+        smt.setString(1, titulo);
+
+        ResultSet result = smt.executeQuery();
+
+        Filme filme = null;
+
+        while(result.next()) {
+            filme = new Filme();
+            filme.setId(result.getInt("ID"));
+            filme.setAluguel(result.getFloat("ALUGUEL"));
+            filme.setTitulo(result.getString("TITULO"));
+        }
+
+        smt.close();
+        conexao.close();
+        return filme;
     }
 }

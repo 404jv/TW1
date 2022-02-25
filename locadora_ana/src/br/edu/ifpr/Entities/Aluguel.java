@@ -6,7 +6,7 @@ package br.edu.ifpr.Entities;
 
 /**
  *
- * @author julia
+ * @author ana
  */
 public class Aluguel {
     private int id;
@@ -32,6 +32,11 @@ public class Aluguel {
         this.cliente_nome = cliente_nome;
         this.filme_title = filme_title;
         this.aluguel = aluguel;
+    }
+
+    public Aluguel(int cliente_id, int filme_id) {
+        this.cliente_id = cliente_id;
+        this.filme_id = filme_id;
     }
 
     public int getId() {

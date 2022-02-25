@@ -11,15 +11,15 @@ package br.edu.ifpr.Entities;
  */
 public class Cliente {
     private int id;
-    private String name;
+    private String nome;
     private String endereco;
     private String numero_celular;
     private String cpf;
 
     public Cliente() {}
 
-    public Cliente(String name, String endereco, String numero_celular, String cpf) {
-        this.name = name;
+    public Cliente(String nome, String endereco, String numero_celular, String cpf) {
+        this.nome = nome;
         this.endereco = endereco;
         this.numero_celular = numero_celular;
         this.cpf = cpf;
@@ -33,12 +33,12 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEndereco() {
