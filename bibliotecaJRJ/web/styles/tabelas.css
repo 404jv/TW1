@@ -1,0 +1,80 @@
+table {
+    margin-top: 48px;
+    border-spacing: 0 12px;
+    max-width: 100%;
+    min-width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+th {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 0 10px;
+    color: #969CB3;
+    text-align: center;
+}
+
+td {
+    font-size: 16px;
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background: var(--background);
+
+    padding: 20px 32px;
+    text-align: center;
+}
+
+td:first-child {
+    border-radius: 7px 0 0 7px;
+}
+
+
+td:last-child {
+    border-radius: 0 7px 7px 0;
+}
+
+.edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    border-radius: 4px;
+    background-color: #90BE6D;
+    border: 0;
+    
+    transition: filter 0.2s;
+}
+
+.edit:hover {
+    filter: brightness(0.8);
+}
+
+.delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    border-radius: 4px;
+    background-color: #F94144;
+    border: 0;
+    
+    transition: filter 0.2s;
+}
+
+.delete:hover {
+    filter: brightness(0.8);
+}
+
+.status-unavailable {
+    color: #E50914;
+}
+
+.status-available {
+    color: #1DBA54;
+}
